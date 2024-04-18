@@ -21,11 +21,12 @@ public class DroneAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = new Vector3(Random.Range(spawnMin.x, spawnMax.x), Random.Range(spawnMin.y, spawnMax.y), Random.Range(spawnMin.z, spawnMax.z));
+        //transform.localPosition = new Vector3(Random.Range(spawnMin.x, spawnMax.x), Random.Range(spawnMin.y, spawnMax.y), Random.Range(spawnMin.z, spawnMax.z));
+        transform.localPosition = new Vector3(0, 0, 0);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         // Spawn the target right above the agent
-        targetTransform.localPosition = transform.localPosition + Vector3.up * 3;
+        targetTransform.localPosition = transform.localPosition + Vector3.up * 2f;
         // Spawn the target somewhere outside of the given spawn radius around the agent
         //Vector3 range = spawnMax - spawnMin - Vector3.one * 2 * radius;
         //targetTransform.localPosition = new Vector3(Random.Range(0, range.x), Random.Range(0, range.y), Random.Range(0, range.z)) + spawnMin;
@@ -49,7 +50,7 @@ public class DroneAgent : Agent
         float rotateX = actions.ContinuousActions[1];
         float rotateY = actions.ContinuousActions[2];
         float rotateZ = -actions.ContinuousActions[3];
-        Debug.Log($"Throttle: {throttle}; Pitch: {rotateX}; Yaw: {rotateY}; Roll: {rotateZ}");
+        //Debug.Log($"Throttle: {throttle}; Pitch: {rotateX}; Yaw: {rotateY}; Roll: {rotateZ}");
 
         transform.Rotate(new Vector3(rotateX, rotateY, rotateZ) * rotateSpeed * Time.deltaTime, Space.Self);
         rb.AddRelativeForce(Vector3.up * throttle * maxThrust);
