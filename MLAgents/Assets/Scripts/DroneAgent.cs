@@ -19,23 +19,29 @@ public class DroneAgent : Agent
     [SerializeField] private Material loseMaterial;
     [SerializeField] private MeshRenderer floorMeshRenderer;
 
+    private Vector3 velocity = Vector3.zero;
+
     public override void OnEpisodeBegin()
     {
-        //transform.localPosition = new Vector3(Random.Range(spawnMin.x, spawnMax.x), Random.Range(spawnMin.y, spawnMax.y), Random.Range(spawnMin.z, spawnMax.z));
-        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(Random.Range(spawnMin.x, spawnMax.x), 0, Random.Range(spawnMin.z, spawnMax.z));
+        //transform.localPosition = new Vector3(0, 0, 0);
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        velocity = Vector3.zero;
         // Spawn the target right above the agent
-        targetTransform.localPosition = transform.localPosition + Vector3.up * 2f;
+        //targetTransform.localPosition = transform.localPosition + Vector3.up * 5f;
+        // Spawn the target above the agent with a bit of randomness
+        //targetTransform.localPosition = new Vector3(Random.Range(spawnMin.x, spawnMax.x), 5f, Random.Range(spawnMin.z, spawnMax.z));
         // Spawn the target somewhere outside of the given spawn radius around the agent
-        //Vector3 range = spawnMax - spawnMin - Vector3.one * 2 * radius;
-        //targetTransform.localPosition = new Vector3(Random.Range(0, range.x), Random.Range(0, range.y), Random.Range(0, range.z)) + spawnMin;
-        //if (targetTransform.localPosition.x >= transform.localPosition.x - radius)
-        //    targetTransform.localPosition += Vector3.right * 2 * radius;
-        //if (targetTransform.localPosition.y >= transform.localPosition.y - radius)
-        //    targetTransform.localPosition += Vector3.up * 2 * radius;
-        //if (targetTransform.localPosition.z >= transform.localPosition.z - radius)
-        //    targetTransform.localPosition += Vector3.forward * 2 * radius;
+        Vector3 range = spawnMax - spawnMin - Vector3.one * 2 * radius;
+        targetTransform.localPosition = new Vector3(Random.Range(0, range.x), Random.Range(0, range.y), Random.Range(0, range.z)) + spawnMin;
+        if (targetTransform.localPosition.x >= transform.localPosition.x - radius)
+            targetTransform.localPosition += Vector3.right * 2 * radius;
+        if (targetTransform.localPosition.y >= transform.localPosition.y - radius)
+            targetTransform.localPosition += Vector3.up * 2 * radius;
+        if (targetTransform.localPosition.z >= transform.localPosition.z - radius)
+            targetTransform.localPosition += Vector3.forward * 2 * radius;
     }
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -53,7 +59,16 @@ public class DroneAgent : Agent
         //Debug.Log($"Throttle: {throttle}; Pitch: {rotateX}; Yaw: {rotateY}; Roll: {rotateZ}");
 
         transform.Rotate(new Vector3(rotateX, rotateY, rotateZ) * rotateSpeed * Time.deltaTime, Space.Self);
-        rb.AddRelativeForce(Vector3.up * throttle * maxThrust);
+        //rb.AddRelativeTorque(new Vector3(rotateX, rotateY, rotateZ) * rotateSpeed * Time.deltaTime);
+        //rb.AddRelativeForce(Vector3.up * throttle * maxThrust);
+        velocity += transform.up * throttle * maxThrust * Time.deltaTime;
+        velocity += Physics.gravity * Time.deltaTime;
+        transform.localPosition += velocity * Time.deltaTime;
+        if (transform.localPosition.y < 0)
+        {
+            velocity = Vector3.zero;
+            transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
