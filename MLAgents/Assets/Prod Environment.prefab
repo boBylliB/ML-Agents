@@ -719,8 +719,8 @@ MonoBehaviour:
   rb: {fileID: 991156304554499103}
   maxThrust: 50
   rotateSpeed: 80
-  spawnMin: {x: -8, y: 1, z: -8}
-  spawnMax: {x: 8, y: 7.5, z: 8}
+  spawnMin: {x: -8, y: 1, z: 8}
+  spawnMax: {x: -8, y: 7.5, z: 8}
   radius: 0.6
   winMaterial: {fileID: 2100000, guid: 56b306bf5cf435041ac1d5270d89c71b, type: 2}
   loseMaterial: {fileID: 2100000, guid: 4505904a8dd3bc5498a85de3825183df, type: 2}
