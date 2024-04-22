@@ -1,0 +1,29 @@
+{
+    "DroneRacer": {
+        "checkpoints": [
+            {
+                "steps": 231309,
+                "file_path": "results\\DroneRacer1\\DroneRacer\\DroneRacer-231309.onnx",
+                "reward": 4.0,
+                "creation_time": 1713793572.8231144,
+                "auxillary_file_paths": [
+                    "results\\DroneRacer1\\DroneRacer\\DroneRacer-231309.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 231309,
+            "file_path": "results\\DroneRacer1\\DroneRacer.onnx",
+            "reward": 4.0,
+            "creation_time": 1713793572.8231144,
+            "auxillary_file_paths": [
+                "results\\DroneRacer1\\DroneRacer\\DroneRacer-231309.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cu118"
+    }
+}

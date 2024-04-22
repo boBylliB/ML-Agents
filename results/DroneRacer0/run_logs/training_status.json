@@ -2,22 +2,58 @@
     "DroneRacer": {
         "checkpoints": [
             {
-                "steps": 104031,
-                "file_path": "results\\DroneRacer0\\DroneRacer\\DroneRacer-104031.onnx",
-                "reward": 0.65625,
-                "creation_time": 1713765905.6241515,
+                "steps": 35499955,
+                "file_path": "results\\DroneRacer0\\DroneRacer\\DroneRacer-35499955.onnx",
+                "reward": 4.5,
+                "creation_time": 1713792255.3525276,
                 "auxillary_file_paths": [
-                    "results\\DroneRacer0\\DroneRacer\\DroneRacer-104031.pt"
+                    "results\\DroneRacer0\\DroneRacer\\DroneRacer-35499955.pt"
+                ]
+            },
+            {
+                "steps": 35999983,
+                "file_path": "results\\DroneRacer0\\DroneRacer\\DroneRacer-35999983.onnx",
+                "reward": 4.5,
+                "creation_time": 1713792563.6860049,
+                "auxillary_file_paths": [
+                    "results\\DroneRacer0\\DroneRacer\\DroneRacer-35999983.pt"
+                ]
+            },
+            {
+                "steps": 36499956,
+                "file_path": "results\\DroneRacer0\\DroneRacer\\DroneRacer-36499956.onnx",
+                "reward": 4.5,
+                "creation_time": 1713792869.9563684,
+                "auxillary_file_paths": [
+                    "results\\DroneRacer0\\DroneRacer\\DroneRacer-36499956.pt"
+                ]
+            },
+            {
+                "steps": 36999989,
+                "file_path": "results\\DroneRacer0\\DroneRacer\\DroneRacer-36999989.onnx",
+                "reward": 4.5,
+                "creation_time": 1713793177.4958756,
+                "auxillary_file_paths": [
+                    "results\\DroneRacer0\\DroneRacer\\DroneRacer-36999989.pt"
+                ]
+            },
+            {
+                "steps": 37123949,
+                "file_path": "results\\DroneRacer0\\DroneRacer\\DroneRacer-37123949.onnx",
+                "reward": 4.5,
+                "creation_time": 1713793277.7076783,
+                "auxillary_file_paths": [
+                    "results\\DroneRacer0\\DroneRacer\\DroneRacer-37123949.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 104031,
+            "steps": 37123949,
             "file_path": "results\\DroneRacer0\\DroneRacer.onnx",
-            "reward": 0.65625,
-            "creation_time": 1713765905.6241515,
+            "reward": 4.5,
+            "creation_time": 1713793277.7076783,
             "auxillary_file_paths": [
-                "results\\DroneRacer0\\DroneRacer\\DroneRacer-104031.pt"
+                "results\\DroneRacer0\\DroneRacer\\DroneRacer-37123949.pt"
             ]
         }
     },

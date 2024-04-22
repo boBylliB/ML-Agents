@@ -71,8 +71,21 @@ public class DroneRacer : Agent
     {
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(transform.localRotation);
-        sensor.AddObservation(gates[gateIndex].transform.localPosition);
-        sensor.AddObservation(gates[gateIndex].transform.localRotation);
+        int idx = gateIndex;
+        sensor.AddObservation(gates[idx].transform.localPosition);
+        sensor.AddObservation(gates[idx].transform.localRotation);
+        ++idx;
+        if (idx > gateIndex) idx = loopGateIndex;
+        sensor.AddObservation(gates[idx].transform.localPosition);
+        sensor.AddObservation(gates[idx].transform.localRotation);
+        ++idx;
+        if (idx > gateIndex) idx = loopGateIndex;
+        sensor.AddObservation(gates[idx].transform.localPosition);
+        sensor.AddObservation(gates[idx].transform.localRotation);
+        ++idx;
+        if (idx > gateIndex) idx = loopGateIndex;
+        sensor.AddObservation(gates[idx].transform.localPosition);
+        sensor.AddObservation(gates[idx].transform.localRotation);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
