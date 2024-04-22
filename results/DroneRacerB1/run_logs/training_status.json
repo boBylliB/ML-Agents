@@ -2,22 +2,31 @@
     "DroneRacerB": {
         "checkpoints": [
             {
-                "steps": 147408,
-                "file_path": "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-147408.onnx",
-                "reward": 2.5,
-                "creation_time": 1713795896.8284569,
+                "steps": 499973,
+                "file_path": "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-499973.onnx",
+                "reward": 11.565953499930245,
+                "creation_time": 1713800343.532089,
                 "auxillary_file_paths": [
-                    "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-147408.pt"
+                    "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-499973.pt"
+                ]
+            },
+            {
+                "steps": 798552,
+                "file_path": "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-798552.onnx",
+                "reward": 15.206385912214007,
+                "creation_time": 1713800551.8929808,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-798552.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 147408,
+            "steps": 798552,
             "file_path": "results\\DroneRacerB1\\DroneRacerB.onnx",
-            "reward": 2.5,
-            "creation_time": 1713795896.8284569,
+            "reward": 15.206385912214007,
+            "creation_time": 1713800551.8929808,
             "auxillary_file_paths": [
-                "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-147408.pt"
+                "results\\DroneRacerB1\\DroneRacerB\\DroneRacerB-798552.pt"
             ]
         }
     },

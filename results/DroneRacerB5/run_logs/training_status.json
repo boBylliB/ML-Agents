@@ -1,0 +1,65 @@
+{
+    "DroneRacerB": {
+        "checkpoints": [
+            {
+                "steps": 3999983,
+                "file_path": "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-3999983.onnx",
+                "reward": 1361.6471790949504,
+                "creation_time": 1713809907.701691,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-3999983.pt"
+                ]
+            },
+            {
+                "steps": 4499996,
+                "file_path": "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-4499996.onnx",
+                "reward": 1369.2945977915888,
+                "creation_time": 1713810278.7986503,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-4499996.pt"
+                ]
+            },
+            {
+                "steps": 4999998,
+                "file_path": "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-4999998.onnx",
+                "reward": 1491.851951751709,
+                "creation_time": 1713810608.7339795,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-4999998.pt"
+                ]
+            },
+            {
+                "steps": 5499957,
+                "file_path": "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-5499957.onnx",
+                "reward": 1641.547967863083,
+                "creation_time": 1713810938.5944073,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-5499957.pt"
+                ]
+            },
+            {
+                "steps": 5807407,
+                "file_path": "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-5807407.onnx",
+                "reward": 231.17178583719644,
+                "creation_time": 1713811148.130582,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-5807407.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5807407,
+            "file_path": "results\\DroneRacerB5\\DroneRacerB.onnx",
+            "reward": 231.17178583719644,
+            "creation_time": 1713811148.130582,
+            "auxillary_file_paths": [
+                "results\\DroneRacerB5\\DroneRacerB\\DroneRacerB-5807407.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cu118"
+    }
+}

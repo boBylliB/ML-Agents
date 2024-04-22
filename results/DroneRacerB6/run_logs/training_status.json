@@ -1,0 +1,47 @@
+{
+    "DroneRacerB": {
+        "checkpoints": [
+            {
+                "steps": 499979,
+                "file_path": "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-499979.onnx",
+                "reward": 315.6435885736374,
+                "creation_time": 1713811624.5491915,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-499979.pt"
+                ]
+            },
+            {
+                "steps": 999969,
+                "file_path": "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-999969.onnx",
+                "reward": 495.0974160096673,
+                "creation_time": 1713811961.9069872,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-999969.pt"
+                ]
+            },
+            {
+                "steps": 1219079,
+                "file_path": "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-1219079.onnx",
+                "reward": 561.9480252503972,
+                "creation_time": 1713812142.1815953,
+                "auxillary_file_paths": [
+                    "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-1219079.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1219079,
+            "file_path": "results\\DroneRacerB6\\DroneRacerB.onnx",
+            "reward": 561.9480252503972,
+            "creation_time": 1713812142.1815953,
+            "auxillary_file_paths": [
+                "results\\DroneRacerB6\\DroneRacerB\\DroneRacerB-1219079.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cu118"
+    }
+}

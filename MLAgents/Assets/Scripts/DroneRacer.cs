@@ -54,6 +54,12 @@ public class DroneRacer : Agent
             AddReward(-0.5f);
             EndEpisode();
         }
+        float dotProd = Vector3.Dot(velocity.normalized, (gates[gateIndex].transform.position - transform.position).normalized);
+        AddReward(0.1f * Time.deltaTime * dotProd * dotProd * Mathf.Sign(dotProd) * velocity.magnitude);
+        //else if (Vector3.Dot(velocity, gates[gateIndex].transform.position - transform.position) > 0)
+        //{
+        //    AddReward(0.1f * Time.deltaTime);
+        //}
     }
     public override void OnEpisodeBegin()
     {
@@ -123,7 +129,7 @@ public class DroneRacer : Agent
         {
             if (gates[gateIndex] == gate)
             {
-                AddReward(1f);
+                AddReward(100f);
                 stepOffset = StepCount;
                 ++gateIndex;
                 prevGates.Add(gate);
@@ -139,7 +145,7 @@ public class DroneRacer : Agent
         }
         else if (other.TryGetComponent<Wall>(out Wall wall))
         {
-            AddReward(-2f);
+            //AddReward(-2f);
             EndEpisode();
         }
     }
