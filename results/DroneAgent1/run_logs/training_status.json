@@ -1,29 +1,3 @@
-{
-    "DroneAgent": {
-        "checkpoints": [
-            {
-                "steps": 419853,
-                "file_path": "results\\DroneAgent1\\DroneAgent\\DroneAgent-419853.onnx",
-                "reward": 0.9959079283887468,
-                "creation_time": 1713494085.4422445,
-                "auxillary_file_paths": [
-                    "results\\DroneAgent1\\DroneAgent\\DroneAgent-419853.pt"
-                ]
-            }
-        ],
-        "final_checkpoint": {
-            "steps": 419853,
-            "file_path": "results\\DroneAgent1\\DroneAgent.onnx",
-            "reward": 0.9959079283887468,
-            "creation_time": 1713494085.4422445,
-            "auxillary_file_paths": [
-                "results\\DroneAgent1\\DroneAgent\\DroneAgent-419853.pt"
-            ]
-        }
-    },
-    "metadata": {
-        "stats_format_version": "0.3.0",
-        "mlagents_version": "1.0.0",
-        "torch_version": "2.2.2+cu118"
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f7a06e0d21e88ae6ae4c59f12833a3c95107e72fc2dd8e0b08899d53aa4ae3e8
+size 972

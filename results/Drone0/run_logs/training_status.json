@@ -1,29 +1,3 @@
-{
-    "MoveToGoal": {
-        "checkpoints": [
-            {
-                "steps": 299666,
-                "file_path": "results\\Drone0\\MoveToGoal\\MoveToGoal-299666.onnx",
-                "reward": -0.25,
-                "creation_time": 1713380197.6231966,
-                "auxillary_file_paths": [
-                    "results\\Drone0\\MoveToGoal\\MoveToGoal-299666.pt"
-                ]
-            }
-        ],
-        "final_checkpoint": {
-            "steps": 299666,
-            "file_path": "results\\Drone0\\MoveToGoal.onnx",
-            "reward": -0.25,
-            "creation_time": 1713380197.6231966,
-            "auxillary_file_paths": [
-                "results\\Drone0\\MoveToGoal\\MoveToGoal-299666.pt"
-            ]
-        }
-    },
-    "metadata": {
-        "stats_format_version": "0.3.0",
-        "mlagents_version": "1.0.0",
-        "torch_version": "2.2.2+cu118"
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0000f4ed0d510847ce3f926d350cdb2d07c97c9406cfe8f2a8694cabddf0bd89
+size 926
