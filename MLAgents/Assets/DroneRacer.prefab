@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
-  m_BehaviorName: DroneRacerB
+  m_BehaviorName: DroneRacerE
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -171,7 +171,7 @@ MonoBehaviour:
   prevGates: []
   rb: {fileID: 238856931845210374}
   maxThrust: 50
-  rotateSpeed: 80
+  rotateSpeed: 150
 --- !u!114 &5079999586820174380
 MonoBehaviour:
   m_ObjectHideFlags: 0

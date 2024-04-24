@@ -19,6 +19,9 @@ public class DroneRacer : Agent
     [SerializeField] private float rotateSpeed = 20f;
 
     private Vector3 velocity = Vector3.zero;
+    //private float maxVel = 0f;
+    //private float velSum = 0f;
+    //private int velCount = 0;
     private int stepOffset = 0;
 
     public bool IsNextGate(Gate gate)
@@ -55,7 +58,7 @@ public class DroneRacer : Agent
             EndEpisode();
         }
         float dotProd = Vector3.Dot(velocity.normalized, (gates[gateIndex].transform.position - transform.position).normalized);
-        AddReward(0.1f * Time.deltaTime * dotProd * dotProd * Mathf.Sign(dotProd) * velocity.magnitude);
+        AddReward(10f * Time.deltaTime * dotProd * dotProd * Mathf.Sign(dotProd) /* velocity.magnitude*/);
         //else if (Vector3.Dot(velocity, gates[gateIndex].transform.position - transform.position) > 0)
         //{
         //    AddReward(0.1f * Time.deltaTime);
@@ -72,6 +75,7 @@ public class DroneRacer : Agent
         gateIndex = 0;
         stepOffset = 0;
         prevGates = new List<Gate>();
+        //Debug.Log($"Max velocity: {maxVel}, Average velocity: {velSum / velCount}");
     }
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -105,7 +109,13 @@ public class DroneRacer : Agent
         transform.Rotate(new Vector3(rotateX, rotateY, rotateZ) * rotateSpeed * Time.deltaTime, Space.Self);
         //rb.AddRelativeTorque(new Vector3(rotateX, rotateY, rotateZ) * rotateSpeed * Time.deltaTime);
         //rb.AddRelativeForce(Vector3.up * throttle * maxThrust);
-        velocity += transform.up * throttle * maxThrust * Time.deltaTime;
+        float thrust = maxThrust;
+        float relVel = Vector3.Dot(velocity, transform.up);
+        if (relVel > 15 && relVel < 41)
+            thrust *= Mathf.Min(1f, 0.71f * Mathf.Log10(41f - relVel));
+        else if (relVel >= 41)
+            thrust = 0;
+        velocity += transform.up * throttle * thrust * Time.deltaTime;
         velocity += Physics.gravity * Time.deltaTime;
         transform.localPosition += velocity * Time.deltaTime;
         if (transform.localPosition.y < 0)
@@ -113,6 +123,10 @@ public class DroneRacer : Agent
             velocity = Vector3.zero;
             transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
         }
+        //if (velocity.magnitude > maxVel)
+        //    maxVel = velocity.magnitude;
+        //velSum += velocity.magnitude;
+        //++velCount;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -140,7 +154,7 @@ public class DroneRacer : Agent
             }
             else if (prevGates.Count > 0 && !prevGates.Contains(gate))
             {
-                AddReward(-1f);
+                //AddReward(-1f);
             }
         }
         else if (other.TryGetComponent<Wall>(out Wall wall))
